@@ -64,3 +64,66 @@ input {
     padding: 22px 0 34px;
   }
 }
+
+.attempt-tabs {
+  display: flex;
+  gap: 8px;
+  margin: 0 0 18px;
+  overflow-x: auto;
+  padding: 0 0 4px;
+}
+
+.attempt-tabs button {
+  flex: 1 0 170px;
+  border: 1px solid #d8d4ca;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.62);
+  color: #55524c;
+  cursor: pointer;
+  padding: 11px 12px;
+  text-align: left;
+}
+
+.attempt-tabs button.active {
+  background: #ffffff;
+  border-color: #13518a;
+  color: #252522;
+  box-shadow: 0 6px 18px rgba(37, 37, 34, 0.08);
+}
+
+.attempt-tabs span {
+  display: block;
+  color: #13518a;
+  font-size: 0.74rem;
+  margin: 0 0 2px;
+  text-transform: uppercase;
+}
+
+.attempt-intro {
+  border-top: 1px solid #d8d4ca;
+  margin: 0 0 18px;
+  padding: 16px 0 0;
+}
+
+.attempt-intro h2,
+.attempt-note h2 {
+  color: #252522;
+  font-size: 1.18rem;
+  letter-spacing: 0;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.attempt-intro p,
+.attempt-note p {
+  color: #55524c;
+  line-height: 1.6;
+  margin: 8px 0 0;
+  max-width: 760px;
+}
+
+.attempt-note {
+  border-top: 1px solid #d8d4ca;
+  min-height: 260px;
+  padding: 28px 0;
+}

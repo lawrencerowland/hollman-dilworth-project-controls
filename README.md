@@ -1,8 +1,8 @@
-# Schedule Spine Explorer
+# Hollman and Dilworth Project Controls Lab
 
-Interactive React explainer for project controls audiences learning the difference between Dilworth-style schedule lanes and Hollom's schedule-spine result.
+Interactive React lab for project controls audiences learning the difference between Dilworth-style schedule lanes and Hollman's schedule-spine result.
 
-The app walks through five scenes:
+The first tab is the schedule-spine explorer. It walks through five scenes:
 
 1. Reframing a staged schedule as comparable dependencies and concurrent fronts.
 2. Comparing Dilworth lanes with a single fishbone-style spine.
@@ -10,17 +10,21 @@ The app walks through five scenes:
 4. Contrasting safe infinite grids with the nested-infinite tower pathology.
 5. Classifying schedule shapes against the known theorem boundary.
 
-The core component was captured from the Claude shared conversation dated 13-14 June and wrapped in a minimal Vite app for further work.
+The remaining tabs are placeholders for future attempts in this problem area: case-led project controls examples and diagnostic question generation.
 
 ## Run locally
 
 ```sh
-npm install
-npm run dev
+pnpm install
+pnpm run dev
 ```
 
 ## Build
 
 ```sh
-npm run build
+pnpm run build
 ```
+
+## Publish
+
+This repo deploys to GitHub Pages from `.github/workflows/pages.yml`.

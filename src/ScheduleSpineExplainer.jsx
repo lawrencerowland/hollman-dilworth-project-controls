@@ -157,9 +157,9 @@ const CLASSES = [
   { k: "bdd", label: "Bounded subdivision — finitely many activities between any two", v: "yes", who: "Duffus–Goddard, 2002", law: "No infinite interval implies a spine.", read: "No stretch of the plan is infinitely finely subdivided." },
   { k: "locfin", label: "Local concurrency finite — each activity overlaps only finitely many others", v: "yes", who: "Zaguia, 2024", law: "Locally finite incomparability graph implies a spine.", read: "The most realistic infinite condition: unbounded length, bounded simultaneity around any one task." },
   { k: "nfree", label: "Series / parallel only — no N-shaped crossover", v: "yes", who: "Zaguia, 2024", law: "N-free implies a spine.", read: "Built purely by nesting blocks in series and in parallel." },
-  { k: "vac", label: "Countable and vacillating — unbounded, but no endless nested-infinite tower", v: "yes", who: "Hollom, 2024 (the new result)", law: "Countable and vacillating implies a spine.", read: "The big new class: allows infinite length, infinite peak concurrency, infinite 2-D frontiers — forbids only the nested-infinite-regress shape." },
-  { k: "w3", label: "Width 3, infinite, otherwise generic", v: "open", who: "Open problem (Hollom, Q6.1)", law: "Unknown — even for countable orders.", read: "A surprisingly thin gap: three concurrent tracks along an infinite timeline is not settled either way." },
-  { k: "tower", label: "Contains the nested-infinite tower (non-vacillating, infinite width)", v: "no", who: "Hollom, 2024 (counterexample, Lean-verified)", law: "A spine need not exist.", read: "An endless descending stack of infinite concurrent phases with no base. No backbone can cover every front. A strongly maximal chain still exists if countable." },
+  { k: "vac", label: "Countable and vacillating — unbounded, but no endless nested-infinite tower", v: "yes", who: "Hollman, 2024 (the new result)", law: "Countable and vacillating implies a spine.", read: "The big new class: allows infinite length, infinite peak concurrency, infinite 2-D frontiers — forbids only the nested-infinite-regress shape." },
+  { k: "w3", label: "Width 3, infinite, otherwise generic", v: "open", who: "Open problem (Hollman, Q6.1)", law: "Unknown — even for countable orders.", read: "A surprisingly thin gap: three concurrent tracks along an infinite timeline is not settled either way." },
+  { k: "tower", label: "Contains the nested-infinite tower (non-vacillating, infinite width)", v: "no", who: "Hollman, 2024 (counterexample, Lean-verified)", law: "A spine need not exist.", read: "An endless descending stack of infinite concurrent phases with no base. No backbone can cover every front. A strongly maximal chain still exists if countable." },
 ];
 const VMAP = { yes: { w: "Spine guaranteed", c: COL.safeFg }, open: { w: "Open — unknown", c: COL.warnFg }, no: { w: "No spine may exist", c: COL.dangerFg } };
 const SD = { yes: COL.safeFg, open: COL.warnFg, no: COL.dangerFg };
@@ -253,7 +253,7 @@ export default function ScheduleSpineExplainer() {
             <div style={S.col}>
               <span style={{ ...S.badge, background: COL.dangerBg, color: COL.dangerFg }}>Danger — no spine</span>
               <Tower />
-              <div style={S.note}>Stack infinite concurrent phases in an endless descending tower with <b>no base level</b> (lexicographic nesting). This leaves the safe class — Hollom builds an explicit schedule of exactly this flavour with no backbone at all.</div>
+              <div style={S.note}>Stack infinite concurrent phases in an endless descending tower with <b>no base level</b> (lexicographic nesting). This leaves the safe class — Hollman builds an explicit schedule of exactly this flavour with no backbone at all.</div>
               <button style={S.link} onClick={() => setWhy(true)}>Why can no backbone cover every front?</button>
             </div>
           ) : (
@@ -271,7 +271,7 @@ export default function ScheduleSpineExplainer() {
                     <span style={{ ...S.chip, background: COL.dangerBg, color: COL.dangerFg, borderColor: "#eccaca" }}>✗ (4,1)</span>
                   </div>
                 </div>
-                <div style={S.note}>Activity <b>a</b> has already claimed slot (4,0), leaving <b>m</b> backbone slots for <b>m+1</b> mutually-ordered tasks. m+1 into m is impossible — so this backbone, though strongly maximal, is not a spine (Hollom, example 5.1). Make that shortfall recur everywhere with no escape and you have the spineless tower.</div>
+                <div style={S.note}>Activity <b>a</b> has already claimed slot (4,0), leaving <b>m</b> backbone slots for <b>m+1</b> mutually-ordered tasks. m+1 into m is impossible — so this backbone, though strongly maximal, is not a spine (Hollman, example 5.1). Make that shortfall recur everywhere with no escape and you have the spineless tower.</div>
               </div>
               <button style={S.link} onClick={() => setWhy(false)}>Back to the two shapes</button>
             </div>
@@ -300,11 +300,11 @@ export default function ScheduleSpineExplainer() {
               </>
             ); })() : "Pick a shape to see which result governs it."}
           </div>
-          <div style={{ fontSize: 13, color: COL.sub, margin: "12px 0 0" }}>Every spine is a strongly maximal chain. Even where no spine exists, every <i>countable</i> schedule still has a strongly maximal chain (Hollom 2024) — a backbone candidate no local rerouting can improve, the nearest structural cousin to a critical path.</div>
+          <div style={{ fontSize: 13, color: COL.sub, margin: "12px 0 0" }}>Every spine is a strongly maximal chain. Even where no spine exists, every <i>countable</i> schedule still has a strongly maximal chain (Hollman 2024) — a backbone candidate no local rerouting can improve, the nearest structural cousin to a critical path.</div>
         </div>
       )}
 
-      <div style={S.foot}>Reading Hollom, “A resolution of the Aharoni–Korman conjecture” (arXiv:2411.16844, 2024–25). Attributions as cited therein — Dilworth 1950 · Aharoni–Korman 1992 · Duffus–Goddard 2002 · Zaguia 2024. The counterexample is formally verified in Lean by Bhavik Mehta.</div>
+      <div style={S.foot}>Reading Hollman, “A resolution of the Aharoni–Korman conjecture” (arXiv:2411.16844, 2024–25). Attributions as cited therein — Dilworth 1950 · Aharoni–Korman 1992 · Duffus–Goddard 2002 · Zaguia 2024. The counterexample is formally verified in Lean by Bhavik Mehta.</div>
     </div>
   );
 }
